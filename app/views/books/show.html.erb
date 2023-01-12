@@ -1,12 +1,17 @@
-<div><%= flash[:notice] %></div>
+<div class="message"><%= flash[:notice] %></div>
 
-<p><strong>Title:</strong></p>
+<p class="box-content">
+    <strong>Title:</strong>
+    <%= @book.title %>
+</p>
 
-<p><%= @book.title %></p>
+<p class="box-content">
+    <strong>Body:</strong>
+    <%= @book.body %>
+</p>
 
-<p><strong>Body:</strong></p>
-
-<p><%= @book.body %></p>
-
-<%= link_to 'edit', edit_book_path(@book.id) %>
-<%= link_to 'back', '/books' %>
+<div class="box-action">
+<%= link_to 'Edit', edit_book_path(@book.id) %>
+|
+<%= link_to 'Back', '/books' %>
+</div>
